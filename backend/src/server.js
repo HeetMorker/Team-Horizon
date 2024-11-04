@@ -76,7 +76,9 @@ app.get("/uploads-list", (req, res) => {
   });
 });
 
-
+app.get("/", (req, res) => {
+  res.send("Backend is running!");
+});
 
 // Start server and initialize Socket.io
 server.listen(PORT, (err) => {
