@@ -1,0 +1,37 @@
+{
+    "version": 2,
+    "projects": [
+      {
+        "name": "patient-management-system-frontend",
+        "directory": "frontend",
+        "framework": "create-react-app",
+        "buildCommand": "npm run build",
+        "outputDirectory": "build"
+      },
+      {
+        "name": "patient-management-system-backend",
+        "directory": "backend",
+        "framework": "node",
+        "buildCommand": "npm install",
+        "outputDirectory": ""
+      }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "backend/src/server.js"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "frontend/$1"
+      }
+    ],
+    "env": {
+        "PORT" : "8000",
+        "DB_URL" : "mongodb+srv://heet:123@pms.apkag.mongodb.net/?retryWrites=true&w=majority&appName=PMS",
+        "JWT_SECRET" : "secretKey",
+        "EMAIL_USER" : "heet100500@gmail.com",
+        "EMAIL_PASSWORD" : "zhiy mjax ghww qrbb"
+    }
+  }
+  
