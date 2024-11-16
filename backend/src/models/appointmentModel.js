@@ -4,7 +4,7 @@ const appointmentSchema = new mongoose.Schema(
   {
     patient: {
       type: mongoose.Schema.Types.ObjectId,
-      ref: "User", // Reference to User model for patients
+      ref: "User",
       required: true,
     },
     specialty: {

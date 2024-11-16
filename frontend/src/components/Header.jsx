@@ -21,12 +21,12 @@ const Header = ({ activeMenu, onSearch }) => {
         const decoded = jwtDecode(token);
         setUserName(`${decoded.firstName} ${decoded.lastName}`);
         setUserRole(decoded.role);
-        axios.get("http://localhost:8000/api/users/profile", {
+        axios.get("https://team-horizon.onrender.com/api/users/profile", {
             headers: { Authorization: `Bearer ${token}` },
           })
           .then((response) => {
             const userData = response.data;
-            setProfileImage(`http://localhost:8000/${userData.profileImage}`);
+            setProfileImage(`https://team-horizon.onrender.com/${userData.profileImage}`);
           })
           .catch((error) => console.error("Error fetching user profile:", error));
       } catch (error) {
@@ -111,7 +111,7 @@ const Header = ({ activeMenu, onSearch }) => {
 
           <Link to={`/${userRole}`} className="flex items-center space-x-2">
             <img
-              src={profileImage || "http://localhost:8000/default-profile.png"}
+              src={profileImage || "https://team-horizon.onrender.com/default-profile.png"}
               alt="user"
               className="w-10 h-10 rounded-full"
             />

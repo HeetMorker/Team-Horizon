@@ -144,7 +144,7 @@ const SearchResults = ({ query, filterOption }) => {
                                         <img
                                             src={
                                                 doctor.profileImage
-                                                    ? `http://localhost:8000/${doctor.profileImage}`
+                                                    ? `https://team-horizon.onrender.com/${doctor.profileImage}`
                                                     : userImage
                                             }
                                             alt="Doctor"

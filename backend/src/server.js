@@ -1,11 +1,11 @@
 const express = require("express");
-const http = require("http"); // Import http for socket server
+const http = require("http");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
 const dbConnection = require("./config/db");
 const Config = require("./config");
-const socket = require("./utils/socket"); // Import socket setup
+const socket = require("./utils/socket"); 
 const socketio = require("./utils/teleconsultationSocket");
 
 // Import routes
@@ -20,26 +20,23 @@ const paymentRoutes = require("./routes/paymentRoutes");
 const upload = require("./utils/multerConfig");
 
 const app = express();
-const server = http.createServer(app); // Create HTTP server
+const server = http.createServer(app); 
 
 socketio.init(server);
 
-const PORT = Config.PORT || 5000;
+const PORT = Config.PORT || 8000;
 
 // Middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors({
-  origin: "https://team-horizon-3ebg.vercel.app", 
-  methods: ["GET", "POST", "PUT", "DELETE",'PATCH'],
-  allowedHeaders: ["Authorization", "Content-Type"],
-  credentials: true,
+  origin: "https://team-horizon-3ebg.vercel.app",
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+  credentials: true
 }));
 
-// Database connection
 dbConnection();
 
-// Serve static files from the 'uploads' folder inside 'src'
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes setup
@@ -80,7 +77,6 @@ app.get("/", (req, res) => {
   res.send("Backend is running!");
 });
 
-// Start server and initialize Socket.io
 server.listen(PORT, (err) => {
   if (err) {
     console.log("Server startup error:", err);

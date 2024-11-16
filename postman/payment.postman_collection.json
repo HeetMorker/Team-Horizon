@@ -21,7 +21,7 @@
 					}
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/payment",
+					"raw": "https://team-horizon.onrender.com/api/payment",
 					"protocol": "http",
 					"host": [
 						"localhost"
