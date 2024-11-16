@@ -6,7 +6,7 @@ import chatIcon from "../../assets/images/chat-icon.png";
 import io from "socket.io-client";
 
 // Initialize socket connection
-const socket = io("http://localhost:8000");
+const socket = io("https://team-horizon.onrender.com/");
 
 const ChatPage = () => {
   const [selectedChatUser, setSelectedChatUser] = useState(null);
